@@ -1,10 +1,19 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include "historicalData.h"
+#include "dataNode.h"
+#include "data.h"
 
-int main(void) {
+int main(int argc, char* argv[]) {
 
-	printf("Hello group!");
+	P_DATA_LIST historicalData = createList();
 
-	printf("Switched to Systematic Trading Analysis branch. Testing branching/commits.");
+	if (!loadDataFromDisk(historicalData, argv[1])) {
+		fprintf(stderr, "No historical data found.");
+		exit(EXIT_FAILURE);
+	}
+
+	printf("%s", historicalData->listTail->nodeData->date);
 
 	return 0;
 }
