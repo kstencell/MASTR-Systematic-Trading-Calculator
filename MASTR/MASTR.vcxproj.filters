@@ -25,6 +25,12 @@
     <Filter Include="Source Files\Indicator Computation">
       <UniqueIdentifier>{8fb5025f-17c1-4722-892f-785f562a68ef}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Systematic Trading Analysis">
+      <UniqueIdentifier>{416554a4-e9a0-4e61-a8b5-fd0bd147129f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Systematic Trading Analysis">
+      <UniqueIdentifier>{4747a2d3-0d37-472a-8e8c-3d6f558534bf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -42,6 +48,12 @@
     <ClCompile Include="indicators.c">
       <Filter>Source Files\Indicator Computation</Filter>
     </ClCompile>
+    <ClCompile Include="mainMenu.c">
+      <Filter>Source Files\Systematic Trading Analysis</Filter>
+    </ClCompile>
+    <ClCompile Include="tradingPlans.c">
+      <Filter>Source Files\Systematic Trading Analysis</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="historicalData.h">
@@ -55,6 +67,12 @@
     </ClInclude>
     <ClInclude Include="indicators.h">
       <Filter>Header Files\Indicator Computation</Filter>
+    </ClInclude>
+    <ClInclude Include="mainMenu.h">
+      <Filter>Header Files\Systematic Trading Analysis</Filter>
+    </ClInclude>
+    <ClInclude Include="tradingPlans.h">
+      <Filter>Header Files\Systematic Trading Analysis</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
