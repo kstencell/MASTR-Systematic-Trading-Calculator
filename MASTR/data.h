@@ -1,12 +1,15 @@
 #pragma once
 
-#include <time.h>
+#include "indicators.h"
 
 typedef struct data {
-	//struct tm date;
+
 	char* date;
 	float open, high, low, close;
 	unsigned long volume;
+
+	P_INDICATORS indicators;
+
 }DATA, *P_DATA;
 
 //PROTOTYPES

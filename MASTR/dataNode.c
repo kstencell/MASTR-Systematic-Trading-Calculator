@@ -14,10 +14,15 @@ P_DATA_NODE createNode(P_DATA data) {
 
 	newNode->nodeData = data;
 	newNode->next = NULL;
+	newNode->prev = NULL;
 
 	return newNode;
 }
 
 void setNodeNextNode(P_DATA_NODE sourceNode, P_DATA_NODE newNextNode) {
 	sourceNode->next = newNextNode;
+}
+
+void setNodePrevNode(P_DATA_NODE newNode, P_DATA_NODE prevNode) {
+	newNode->prev = prevNode;
 }

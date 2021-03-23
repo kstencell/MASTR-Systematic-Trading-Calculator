@@ -3,6 +3,7 @@
 #include "historicalData.h"
 #include "dataNode.h"
 #include "data.h"
+#include "indicators.h"
 
 int main(int argc, char* argv[]) {
 
@@ -12,6 +13,11 @@ int main(int argc, char* argv[]) {
 		fprintf(stderr, "No historical data found.");
 		exit(EXIT_FAILURE);
 	}
+
+	printf("%s", historicalData->listTail->nodeData->date);
+	printf("%s", historicalData->listTail->nodeData->date);
+
+	computeIndicators(historicalData);
 
 	printf("%s", historicalData->listTail->nodeData->date);
 

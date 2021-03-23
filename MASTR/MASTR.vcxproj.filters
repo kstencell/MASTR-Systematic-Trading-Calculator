@@ -19,6 +19,12 @@
     <Filter Include="Header Files\Historical Data">
       <UniqueIdentifier>{b99cda6d-6863-4113-9152-7bec1b9cb98e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Indicator Computation">
+      <UniqueIdentifier>{41e1ce05-1bd8-4f7e-8e20-b77056fef59b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Indicator Computation">
+      <UniqueIdentifier>{8fb5025f-17c1-4722-892f-785f562a68ef}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -33,6 +39,9 @@
     <ClCompile Include="dataNode.c">
       <Filter>Source Files\Historical Data</Filter>
     </ClCompile>
+    <ClCompile Include="indicators.c">
+      <Filter>Source Files\Indicator Computation</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="historicalData.h">
@@ -43,6 +52,9 @@
     </ClInclude>
     <ClInclude Include="data.h">
       <Filter>Header Files\Historical Data</Filter>
+    </ClInclude>
+    <ClInclude Include="indicators.h">
+      <Filter>Header Files\Indicator Computation</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

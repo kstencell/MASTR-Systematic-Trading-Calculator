@@ -33,6 +33,7 @@ void addDataToList(P_DATA_LIST list, P_DATA newData) {
 	}
 	else {
 		setNodeNextNode(list->listTail, newNode);
+		setNodePrevNode(newNode, list->listTail);
 		list->listTail = newNode;
 	}
 }
