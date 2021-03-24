@@ -54,6 +54,12 @@
     <ClCompile Include="tradingPlans.c">
       <Filter>Source Files\Systematic Trading Analysis</Filter>
     </ClCompile>
+    <ClCompile Include="tradingPlanNode.c">
+      <Filter>Source Files\Systematic Trading Analysis</Filter>
+    </ClCompile>
+    <ClCompile Include="tradingPlanList.c">
+      <Filter>Source Files\Systematic Trading Analysis</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="historicalData.h">
@@ -72,6 +78,12 @@
       <Filter>Header Files\Systematic Trading Analysis</Filter>
     </ClInclude>
     <ClInclude Include="tradingPlans.h">
+      <Filter>Header Files\Systematic Trading Analysis</Filter>
+    </ClInclude>
+    <ClInclude Include="tradingPlanNode.h">
+      <Filter>Header Files\Systematic Trading Analysis</Filter>
+    </ClInclude>
+    <ClInclude Include="tradingPlanList.h">
       <Filter>Header Files\Systematic Trading Analysis</Filter>
     </ClInclude>
   </ItemGroup>

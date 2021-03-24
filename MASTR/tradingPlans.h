@@ -26,3 +26,6 @@ typedef struct tradingPlan {
 
 }TRADING_PLAN, *P_TRADING_PLAN;
 
+
+// PROTOTYPES
+void createTradingPlan();

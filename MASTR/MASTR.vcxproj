@@ -145,6 +145,8 @@
     <ClCompile Include="indicators.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="mainMenu.c" />
+    <ClCompile Include="tradingPlanList.c" />
+    <ClCompile Include="tradingPlanNode.c" />
     <ClCompile Include="tradingPlans.c" />
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +155,8 @@
     <ClInclude Include="historicalData.h" />
     <ClInclude Include="indicators.h" />
     <ClInclude Include="mainMenu.h" />
+    <ClInclude Include="tradingPlanList.h" />
+    <ClInclude Include="tradingPlanNode.h" />
     <ClInclude Include="tradingPlans.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
