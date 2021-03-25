@@ -4,11 +4,10 @@
 #include <stdbool.h>
 #include <string.h>
 #include "mainMenu.h"
+#include "tradingPlans.h"
+#include "historicalData.h"
 
-void mainMenu() {
-
-	char userInput[MAX_USER_INPUT_LEN];
-	bool validOptionChoice = false;
+void printMainMenuOptions() {
 
 	fputs("~~~~~~~~~~~~~~~ MAIN MENU ~~~~~~~~~~~~~~~~~\n", stdout);
 	fputs("What would you like to do?\n", stdout);
@@ -21,6 +20,13 @@ void mainMenu() {
 	fputs("g) Quit\n", stdout);
 	fputs("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n", stdout);
 	fputs("Option: ", stdout);
+
+}
+
+void executeMainMenuOptionChoice(P_DATA_LIST historicalData, P_TRADE_CONDITION tradingPlan) {
+
+	char userInput[MAX_USER_INPUT_LEN];
+	bool validOptionChoice = false;
 
 	while (!validOptionChoice) {
 		fgets(userInput, MAX_USER_INPUT_LEN, stdin);

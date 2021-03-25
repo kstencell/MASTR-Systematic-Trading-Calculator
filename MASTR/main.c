@@ -4,6 +4,8 @@
 #include "dataNode.h"
 #include "data.h"
 #include "indicators.h"
+#include "tradingPlans.h"
+#include "mainMenu.h"
 
 int main(int argc, char* argv[]) {
 
@@ -14,12 +16,19 @@ int main(int argc, char* argv[]) {
 		exit(EXIT_FAILURE);
 	}
 
-	printf("%s", historicalData->listTail->nodeData->date);
-	printf("%s", historicalData->listTail->nodeData->date);
+	/*printf("%s", historicalData->listTail->nodeData->date);
+	printf("%s", historicalData->listTail->nodeData->date);*/
 
 	computeIndicators(historicalData);
 
+	P_TRADE_CONDITION tradingPlan = initializeTradingPlan();
+
 	printf("%s", historicalData->listTail->nodeData->date);
+
+	while (true) {
+		printMainMenuOptions();
+		executeMainMenuOptionChoice(historicalData, tradingPlan);
+	}
 
 	return 0;
 }
