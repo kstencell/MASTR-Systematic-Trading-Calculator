@@ -13,15 +13,15 @@ double calcMA(/*HDRtailNode,*/ int numDays) {
     }
     if (numDays = 5) {
      
-        double smooth_Factor = 2.0, weighted_EMA = 0.0, observed_Days = 5.0, close_Price = 0.0;
+        double smooth_Factor = 2.0, ema_Multiplier = 0.0, observed_Days = 5.0, close_Price = 0.0;
 
 
         for (int i = 0; i < 5; i++) {
             mov_Avg_Val += 1 /*nodeTail->nodeData->close*/; //1 used as dummy;
             getNodePreveNode(/*hdrnode*/);
         }
-         
-        weighted_EMA = (smooth_Factor / (observed_Days + 1.0));
+        
+        ema_Multiplier = (smooth_Factor / (observed_Days + 1.0));
         
         
     }
