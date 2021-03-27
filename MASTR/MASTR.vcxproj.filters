@@ -51,13 +51,13 @@
     <ClCompile Include="mainMenu.c">
       <Filter>Source Files\Systematic Trading Analysis</Filter>
     </ClCompile>
-    <ClCompile Include="tradingPlans.c">
+    <ClCompile Include="tradeConditionList.c">
       <Filter>Source Files\Systematic Trading Analysis</Filter>
     </ClCompile>
-    <ClCompile Include="tradingPlanNode.c">
+    <ClCompile Include="tradeConditionNode.c">
       <Filter>Source Files\Systematic Trading Analysis</Filter>
     </ClCompile>
-    <ClCompile Include="tradingPlanList.c">
+    <ClCompile Include="tradeCondition.c">
       <Filter>Source Files\Systematic Trading Analysis</Filter>
     </ClCompile>
   </ItemGroup>
@@ -77,13 +77,13 @@
     <ClInclude Include="mainMenu.h">
       <Filter>Header Files\Systematic Trading Analysis</Filter>
     </ClInclude>
-    <ClInclude Include="tradingPlans.h">
+    <ClInclude Include="tradeCondition.h">
       <Filter>Header Files\Systematic Trading Analysis</Filter>
     </ClInclude>
-    <ClInclude Include="tradingPlanNode.h">
+    <ClInclude Include="tradeConditionNode.h">
       <Filter>Header Files\Systematic Trading Analysis</Filter>
     </ClInclude>
-    <ClInclude Include="tradingPlanList.h">
+    <ClInclude Include="tradeConditionList.h">
       <Filter>Header Files\Systematic Trading Analysis</Filter>
     </ClInclude>
   </ItemGroup>

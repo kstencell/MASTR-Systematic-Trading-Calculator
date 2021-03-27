@@ -16,22 +16,15 @@ typedef struct tradeCondition {
 	THRESHOLD_TYPE thresholdType;
 	THRESHOLD_DIRECTION thresholdDirection;
 	float thresholdValue;
+	int shareCount; // amount to trade when condition pops
 
-}TRADE_CONDITION, * P_TRADE_CONDITION;
-
-
-//typedef struct tradingPlan {
-//
-//	P_TRADE_CONDITION condition1;
-//	P_TRADE_CONDITION condition2;
-//	P_TRADE_CONDITION condition3;
-//	P_TRADE_CONDITION condition4;
-//	P_TRADE_CONDITION condition5;
-//
-//}TRADING_PLAN, *P_TRADING_PLAN;
-
+}TRADE_CONDITION, *P_TRADE_CONDITION;
 
 // PROTOTYPES
-P_TRADE_CONDITION initializeTradingPlan();
+P_TRADE_CONDITION createTradeCondition();
 void createTradingPlan(P_TRADE_CONDITION);
 void addTradeCondition(P_TRADE_CONDITION);
+void selectConditionType(P_TRADE_CONDITION);
+void selectIndicatorType(P_TRADE_CONDITION);
+void selectThresholdType(P_TRADE_CONDITION);
+void selectThresholdDirection(P_TRADE_CONDITION);
