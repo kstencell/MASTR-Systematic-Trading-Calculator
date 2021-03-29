@@ -1,6 +1,6 @@
 #pragma once
 
-#define BUFFER_SIZE		5
+#define BUFFER_SIZE		10
 
 typedef enum conditionStatus { FULL, EMPTY} CONDITION_STATUS;
 typedef enum conditionType { BUY, SELL } CONDITION_TYPE;
@@ -10,7 +10,7 @@ typedef enum thresholdDirection { GREATER_THAN, GREAT_THAN_OR_EQUAL, LESS_THAN, 
 
 typedef struct tradeCondition {
 
-	CONDITION_STATUS conditionStatus;
+	//CONDITION_STATUS conditionStatus;
 	CONDITION_TYPE conditionType;
 	INDICATOR_TYPE indicatorType;
 	THRESHOLD_TYPE thresholdType;
@@ -28,3 +28,5 @@ void selectConditionType(P_TRADE_CONDITION);
 void selectIndicatorType(P_TRADE_CONDITION);
 void selectThresholdType(P_TRADE_CONDITION);
 void selectThresholdDirection(P_TRADE_CONDITION);
+void selectThresholdValue(P_TRADE_CONDITION);
+double getNumberFromUser();

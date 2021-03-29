@@ -6,14 +6,14 @@
 #include "mainMenu.h"
 
 
-P_TRADE_CONDITION createTradeCondition() {
-
-	P_TRADE_CONDITION tradeCondition = (P_TRADE_CONDITION)malloc(sizeof(TRADE_CONDITION));
-
-	tradeCondition->conditionStatus = EMPTY;
-
-	return tradeCondition;
-}
+//P_TRADE_CONDITION createTradeCondition() {
+//
+//	P_TRADE_CONDITION tradeCondition = (P_TRADE_CONDITION)malloc(sizeof(TRADE_CONDITION));
+//
+//	tradeCondition->conditionStatus = EMPTY;
+//
+//	return tradeCondition;
+//}
 
 void createTradeCondition(P_TRADE_CONDITION tradeConditionList) {
 
@@ -58,6 +58,9 @@ void addTradeCondition(P_TRADE_CONDITION tradingPlan) {
 	selectConditionType(newCondition);
 	selectIndicatorType(newCondition);
 	selectThresholdType(newCondition);
+	selectThresholdDirection(newCondition);
+	selectThresholdValue(newCondition);
+	newCondition->conditionStatus = FULL;
 }
 
 void selectConditionType(P_TRADE_CONDITION condition) {
@@ -134,7 +137,7 @@ void selectThresholdType(P_TRADE_CONDITION condition) {
 			return;
 		}
 		else if (!strcmp("b", userInput)) {
-			condition->thresholdType = PERCENTAGE;
+			condition->thresholdType = ABSOLUTE;
 			return;
 		}
 		else {
@@ -177,4 +180,48 @@ void selectThresholdDirection(P_TRADE_CONDITION condition) {
 			fputs("Not a valid input, please try again.\n\n", stdout);
 		}
 	}
+}
+
+void selectThresholdValue(P_TRADE_CONDITION condition) {
+
+	double thresholdValue;
+
+	do {
+		thresholdValue = getNumberFromUser();
+	} while (condition->thresholdType == ABSOLUTE && thresholdValue <= 0);
+
+	condition->thresholdValue = thresholdValue;
+
+	return;
+}
+
+double getNumberFromUser() // General purpose function to get input from the user and only pass it along if its in a valid numerical format
+{							// This function is used any time user input is requested.
+	char buffer[BUFFER_SIZE];
+	bool validInput;
+	int stringLength;
+
+	do // Loop to keep reprompting the user to enter input until acceptable input is detected.
+	{
+		validInput = true;
+		fgets(buffer, BUFFER_SIZE, stdin);
+		stringLength = strlen(buffer);
+		if (!strcmp(buffer, "\n"))
+			validInput = false;
+		else
+			buffer[stringLength - 1] = '\0';
+		for (int j = 0; j < stringLength - 1; j++)
+		{
+			if (!isdigit(buffer[j])) // To accept only numerical digits in the user input
+				validInput = false;
+			if (j == 0 && buffer[0] == '-' && stringLength > 2) // To accept negative numbers for input.
+				validInput = true;
+		}
+		if (stringLength >= 10) // Ints at max are 9 digits
+			validInput = false;
+		if (!validInput)
+			printf_s("\nNot a valid input. Please try again.\n\n");
+	} while (!validInput);
+
+	return (double)atoi(buffer);
 }

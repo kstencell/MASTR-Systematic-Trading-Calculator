@@ -1,6 +1,6 @@
 #pragma once
 
-#include "tradingPlans.h"
+#include "tradeConditions.h"
 #include "historicalData.h"
 
 #define MAX_USER_INPUT_LEN		20
