@@ -249,3 +249,26 @@ void deleteTradeCondition(P_TRADE_CONDITION condition) {
 	free(condition);
 	return;
 }
+
+void streamPrintTradeCondition(FILE* fp, P_TRADE_CONDITION condition) {
+
+	fprintf(fp, "%d\n", condition->conditionType);
+	fprintf(fp, "%d\n", condition->indicatorType);
+	fprintf(fp, "%d\n", condition->thresholdType);
+	fprintf(fp, "%d\n", condition->thresholdDirection);
+	fprintf(fp, "%f\n", condition->thresholdValue);
+	fflush(fp);
+
+	return;
+}
+
+void streamReadTradeConditionFromFile(FILE* fp, P_TRADE_CONDITION condition) {
+
+	fscanf(fp, "%d\n", &(condition->conditionType));
+	fscanf(fp, "%d\n", &(condition->indicatorType));
+	fscanf(fp, "%d\n", &(condition->thresholdType));
+	fscanf(fp, "%d\n", &(condition->thresholdDirection));
+	fscanf(fp, "%f\n", &(condition->thresholdValue));
+
+	return;
+}

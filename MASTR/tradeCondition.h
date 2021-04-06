@@ -39,3 +39,6 @@ void selectThresholdValue(P_TRADE_CONDITION);
 double getNumberFromUser();
 void printTradeCondition(P_TRADE_CONDITION);
 void deleteTradeCondition(P_TRADE_CONDITION);
+void streamPrintTradeCondition(FILE*, P_TRADE_CONDITION);
+void streamReadTradeConditionFromFile(FILE*, P_TRADE_CONDITION);
+

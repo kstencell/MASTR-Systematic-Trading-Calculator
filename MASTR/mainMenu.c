@@ -39,10 +39,18 @@ bool executeMainMenuOptionChoice(P_DATA_LIST historicalData, P_TRADE_CONDITION_L
 			return true;
 		}
 		else if (!strcmp("b", userInput)) {
-
+			if (!loadTradeConditionListFromFile(tradeConditionList, "tradeConditionList.txt"))
+				fprintf(stderr, "\nError cannot load trade condition list from file.\n");
+			else
+				printf("Trade condition list load successful.\n");
+			return true;
 		}
 		else if (!strcmp("c", userInput)) {
-
+			if (!saveTradeConditionListToDisk(tradeConditionList, "tradeConditionList.txt"))
+				fprintf(stderr, "\nError saving trade condition list to file.\n");
+			else
+				printf("Save successful.\n");
+			return true;
 		}
 		else if (!strcmp("d", userInput)) {
 

@@ -1,5 +1,6 @@
 #pragma once
 #include <stdbool.h>
+#include <stdio.h>
 #include "tradeConditionNode.h"
 #include "tradeCondition.h"
 
@@ -18,3 +19,8 @@ void addConditionToList(P_TRADE_CONDITION_LIST, P_TRADE_CONDITION);
 void deleteConditionOption(P_TRADE_CONDITION_LIST);
 void removeConditionFromList(P_TRADE_CONDITION_LIST, int);
 void printTradeConditionList(P_TRADE_CONDITION_LIST);
+bool saveTradeConditionListToDisk(P_TRADE_CONDITION_LIST, char[]);
+void streamPrintTradeConditionList(FILE*, P_TRADE_CONDITION_LIST);
+bool loadTradeConditionListFromFile(P_TRADE_CONDITION_LIST, char[]);
+
+

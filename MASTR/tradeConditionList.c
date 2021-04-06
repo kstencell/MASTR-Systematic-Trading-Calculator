@@ -185,3 +185,46 @@ void printTradeConditionList(P_TRADE_CONDITION_LIST tradeConditionList) {
 
 	return;
 }
+
+bool saveTradeConditionListToDisk(P_TRADE_CONDITION_LIST tradeConditionList, char filename[]) {
+
+	FILE* fp;
+	if ((fp = fopen(filename, "w+")) == NULL)
+		return false;
+
+	streamPrintTradeConditionList(fp, tradeConditionList);
+
+	fclose(fp);
+
+	return true;
+}
+
+void streamPrintTradeConditionList(FILE* fp, P_TRADE_CONDITION_LIST tradeConditionList) {
+
+	if (tradeConditionList->listHead == NULL) {
+		fprintf(stderr, "\nNo trade conditions to print.\n");
+		return;
+	}
+	else {
+		P_TRADE_CONDITION_NODE current = tradeConditionList->listHead;
+
+		while (current != NULL) {
+			streamPrintTradeCondition(fp, current->nodeData);
+			current = current->next;
+		}
+	}
+}
+
+bool loadTradeConditionListFromFile(P_TRADE_CONDITION_LIST tradeConditionList, char filename[]) {
+
+	FILE* fp;
+	if ((fp = fopen(filename, "r")) == NULL)
+		return false;
+
+	while (!feof(fp)) {
+		P_TRADE_CONDITION condition = initializeTradeCondition();
+		streamReadTradeConditionFromFile(fp, condition);
+		addConditionToList(tradeConditionList, condition);
+	}
+}
+
