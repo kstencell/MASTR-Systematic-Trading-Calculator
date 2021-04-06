@@ -4,36 +4,39 @@
 #include <stdbool.h>
 #include <string.h>
 #include "mainMenu.h"
-#include "tradingPlans.h"
+#include "tradeConditionList.h"
 #include "historicalData.h"
 
 void printMainMenuOptions() {
 
 	fputs("~~~~~~~~~~~~~~~ MAIN MENU ~~~~~~~~~~~~~~~~~\n", stdout);
 	fputs("What would you like to do?\n", stdout);
-	fputs("a) Create a systematic trading plan\n", stdout);
-	fputs("b) Change your current trading plan\n", stdout);
-	fputs("c) Load an existing trading plan from file\n", stdout);
-	fputs("d) Save your current trading plan\n", stdout);
-	fputs("e) Simulate your trading plan.\n", stdout);
-	fputs("f) More Info\n", stdout);
-	fputs("g) Quit\n", stdout);
+	fputs("a) Customize your systematic trading plan\n", stdout);
+	fputs("b) Load an existing trading plan from file\n", stdout);
+	fputs("c) Save your current trading plan\n", stdout);
+	fputs("d) Simulate your trading plan.\n", stdout);
+	fputs("e) More Info\n", stdout);
+	fputs("f) Quit\n", stdout);
 	fputs("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n", stdout);
 	fputs("Option: ", stdout);
 
 }
 
-void executeMainMenuOptionChoice(P_DATA_LIST historicalData, P_TRADE_CONDITION tradingPlan) {
+bool executeMainMenuOptionChoice(P_DATA_LIST historicalData, P_TRADE_CONDITION_LIST tradeConditionList) {
 
 	char userInput[MAX_USER_INPUT_LEN];
-	bool validOptionChoice = false;
 
-	while (!validOptionChoice) {
+	while (true) {
 		fgets(userInput, MAX_USER_INPUT_LEN, stdin);
 		userInput[strcspn(userInput, "\n")] = 0; // removes the newline char from user input
 
 		if (!strcmp("a", userInput)) {
-
+			bool continueTradeConditionMenu = true;
+			do {
+				printTradeConditionListMenu();
+				continueTradeConditionMenu = executeTradeConditionListUserOption(tradeConditionList);
+			} while (continueTradeConditionMenu);
+			return true;
 		}
 		else if (!strcmp("b", userInput)) {
 
@@ -48,7 +51,7 @@ void executeMainMenuOptionChoice(P_DATA_LIST historicalData, P_TRADE_CONDITION t
 
 		}
 		else if (!strcmp("f", userInput)) {
-
+			return false;
 		}
 		else {
 			fputs("\nError reading menu option, please try again!\n\n", stdout);

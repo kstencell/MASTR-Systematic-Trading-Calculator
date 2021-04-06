@@ -11,6 +11,6 @@ typedef struct tradeConditionNode {
 
 }TRADE_CONDITION_NODE, *P_TRADE_CONDITION_NODE;
 
-P_TRADE_CONDITION_NODE createNode(P_TRADE_CONDITION);
-void setListNodeNextListNode(P_TRADE_CONDITION_NODE, P_TRADE_CONDITION_NODE);
-void setListNodePrevListNode(P_TRADE_CONDITION_NODE, P_TRADE_CONDITION_NODE);
+P_TRADE_CONDITION_NODE createTradeConditionNode(P_TRADE_CONDITION);
+void setTradeConditionNodeNextTradeConditionNode(P_TRADE_CONDITION_NODE, P_TRADE_CONDITION_NODE);
+void setTradeConditionNodePrevTradeConditionNode(P_TRADE_CONDITION_NODE, P_TRADE_CONDITION_NODE);

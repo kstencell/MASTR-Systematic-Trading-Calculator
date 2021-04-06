@@ -6,51 +6,51 @@
 #include "mainMenu.h"
 
 
-//P_TRADE_CONDITION createTradeCondition() {
-//
-//	P_TRADE_CONDITION tradeCondition = (P_TRADE_CONDITION)malloc(sizeof(TRADE_CONDITION));
-//
-//	tradeCondition->conditionStatus = EMPTY;
-//
-//	return tradeCondition;
-//}
+P_TRADE_CONDITION initializeTradeCondition() {
 
-void createTradeCondition(P_TRADE_CONDITION tradeConditionList) {
+	P_TRADE_CONDITION tradeCondition = (P_TRADE_CONDITION)malloc(sizeof(TRADE_CONDITION));
 
-	char userInput[MAX_USER_INPUT_LEN];
-	bool validOptionChoice = false;
+	//tradeCondition->conditionStatus = EMPTY;
 
-	fputs("~~~~~~~~~~~~~~~ CREATE TRADING PLAN ~~~~~~~~~~~~~~~~~\n", stdout);
-	fputs("What would you like to do?\n", stdout);
-	fputs("a) Add a trade condition\n", stdout);
-	fputs("b) View all trade conditions\n", stdout);
-	fputs("c) Delete a trade condition\n", stdout);
-	fputs("d) Quit to main menu\n", stdout);
-
-	while (true) {
-
-		fgets(userInput, MAX_USER_INPUT_LEN, stdin);
-		userInput[strcspn(userInput, "\n")] = 0;
-
-		if (!strcmp("a", userInput)) {
-			addTradeCondition(tradeConditionList);
-		}
-		else if (!strcmp("b", userInput)) {
-
-		}
-		else if (!strcmp("c", userInput)) {
-
-		}
-		else if (!strcmp("d", userInput)) {
-
-		}
-	}
-
+	return tradeCondition;
 }
 
-void addTradeCondition(P_TRADE_CONDITION tradingPlan) {
+//void createTradeCondition(P_TRADE_CONDITION tradeConditionList) {
+//
+//	char userInput[MAX_USER_INPUT_LEN];
+//	bool validOptionChoice = false;
+//
+//	fputs("~~~~~~~~~~~~~~~ CREATE TRADING PLAN ~~~~~~~~~~~~~~~~~\n", stdout);
+//	fputs("What would you like to do?\n", stdout);
+//	fputs("a) Add a trade condition\n", stdout);
+//	fputs("b) View all trade conditions\n", stdout);
+//	fputs("c) Delete a trade condition\n", stdout);
+//	fputs("d) Quit to main menu\n", stdout);
+//
+//	while (true) {
+//
+//		fgets(userInput, MAX_USER_INPUT_LEN, stdin);
+//		userInput[strcspn(userInput, "\n")] = 0;
+//
+//		if (!strcmp("a", userInput)) {
+//			addTradeCondition(tradeConditionList);
+//		}
+//		else if (!strcmp("b", userInput)) {
+//
+//		}
+//		else if (!strcmp("c", userInput)) {
+//
+//		}
+//		else if (!strcmp("d", userInput)) {
+//
+//		}
+//	}
+//
+//}
 
-	P_TRADE_CONDITION newCondition = createTradeCondition();
+P_TRADE_CONDITION createTradeCondition() {
+
+	P_TRADE_CONDITION newCondition = initializeTradeCondition();
 
 	char userInput[MAX_USER_INPUT_LEN];
 	bool validOptionChoice = false;
@@ -60,7 +60,8 @@ void addTradeCondition(P_TRADE_CONDITION tradingPlan) {
 	selectThresholdType(newCondition);
 	selectThresholdDirection(newCondition);
 	selectThresholdValue(newCondition);
-	newCondition->conditionStatus = FULL;
+
+	return newCondition;
 }
 
 void selectConditionType(P_TRADE_CONDITION condition) {
@@ -185,6 +186,8 @@ void selectThresholdDirection(P_TRADE_CONDITION condition) {
 void selectThresholdValue(P_TRADE_CONDITION condition) {
 
 	double thresholdValue;
+
+	fputs("\nInput a threshold value: \n", stdout);
 
 	do {
 		thresholdValue = getNumberFromUser();

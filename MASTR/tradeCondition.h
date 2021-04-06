@@ -21,9 +21,8 @@ typedef struct tradeCondition {
 }TRADE_CONDITION, *P_TRADE_CONDITION;
 
 // PROTOTYPES
+P_TRADE_CONDITION initializeTradeCondition();
 P_TRADE_CONDITION createTradeCondition();
-void createTradingPlan(P_TRADE_CONDITION);
-void addTradeCondition(P_TRADE_CONDITION);
 void selectConditionType(P_TRADE_CONDITION);
 void selectIndicatorType(P_TRADE_CONDITION);
 void selectThresholdType(P_TRADE_CONDITION);

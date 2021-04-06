@@ -7,7 +7,7 @@
 #include <stdbool.h>
 #include <string.h>
 
-P_TRADE_CONDITION_LIST createTradeConditionList() {
+P_TRADE_CONDITION_LIST initializeTradeConditionList() {
 
 	P_TRADE_CONDITION_LIST list = (P_TRADE_CONDITION_LIST)malloc(sizeof(TRADE_CONDITION_LIST));
 	if (!list) {
@@ -21,10 +21,7 @@ P_TRADE_CONDITION_LIST createTradeConditionList() {
 	return list;
 }
 
-void tradeConditionListMenu(P_TRADE_CONDITION_LIST list) {
-
-	char userInput[MAX_USER_INPUT_LEN];
-	bool validOptionChoice = false;
+void printTradeConditionListMenu() {
 
 	fputs("~~~~~~~~~~~~~~~ CREATE TRADING PLAN ~~~~~~~~~~~~~~~~~\n", stdout);
 	fputs("What would you like to do?\n", stdout);
@@ -32,6 +29,13 @@ void tradeConditionListMenu(P_TRADE_CONDITION_LIST list) {
 	fputs("b) View all trade conditions\n", stdout);
 	fputs("c) Delete a trade condition\n", stdout);
 	fputs("d) Quit to main menu\n", stdout);
+	fputs("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n", stdout);
+}
+
+bool executeTradeConditionListUserOption(P_TRADE_CONDITION_LIST tradeConditionList) {
+
+	char userInput[MAX_USER_INPUT_LEN];
+	bool validOptionChoice = false;
 
 	while (true) {
 
@@ -39,7 +43,9 @@ void tradeConditionListMenu(P_TRADE_CONDITION_LIST list) {
 		userInput[strcspn(userInput, "\n")] = 0;
 
 		if (!strcmp("a", userInput)) {
-			addTradeCondition(tradeConditionList);
+			P_TRADE_CONDITION newCondition = createTradeCondition();
+			addConditionToList(tradeConditionList, newCondition);
+			return true;
 		}
 		else if (!strcmp("b", userInput)) {
 
@@ -48,26 +54,26 @@ void tradeConditionListMenu(P_TRADE_CONDITION_LIST list) {
 
 		}
 		else if (!strcmp("d", userInput)) {
-
+			return false;
 		}
 	}
 }
 
-P_TRADE_CONDITION_LIST getHeadNode(P_TRADE_CONDITION_LIST list) {
-	return list->listHead;
+P_TRADE_CONDITION_NODE getTradeConditionListHeadNode(P_TRADE_CONDITION_LIST tradeConditionlist) {
+	return tradeConditionlist->listHead;
 }
 
-void addPlanToList(P_TRADE_CONDITION_LIST list, P_TRADE_CONDITION newPlan) {
+void addConditionToList(P_TRADE_CONDITION_LIST tradeConditionList, P_TRADE_CONDITION newCondition) {
 
-	P_TRADE_CONDITION_NODE newNode = createPlanNode(newPlan);
+	P_TRADE_CONDITION_NODE newNode = createTradeConditionNode(newCondition);
 
-	if (getHeadListNode(list) == NULL) {
-		list->listHead = newNode;
-		list->listTail = newNode;
+	if (getTradeConditionListHeadNode(tradeConditionList) == NULL) {
+		tradeConditionList->listHead = newNode;
+		tradeConditionList->listTail = newNode;
 	}
 	else {
-		setPlanNodeNextPlanNode(list->listTail, newNode);
-		setPlanNodePrevPlanNode(newNode, list->listTail);
-		list->listTail = newNode;
+		setTradeConditionNodeNextTradeConditionNode(tradeConditionList->listTail, newNode);
+		setTradeConditionNodePrevTradeConditionNode(newNode, tradeConditionList->listTail);
+		tradeConditionList->listTail = newNode;
 	}
 }

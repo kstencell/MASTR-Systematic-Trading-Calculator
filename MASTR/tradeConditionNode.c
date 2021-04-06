@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include "tradeConditionNode.h"
 
-P_TRADE_CONDITION_NODE createNode(P_TRADE_CONDITION plan) {
+P_TRADE_CONDITION_NODE createTradeConditionNode(P_TRADE_CONDITION plan) {
 
 	P_TRADE_CONDITION_NODE newNode = (P_TRADE_CONDITION_NODE)malloc(sizeof(TRADE_CONDITION_NODE));
 	if (!newNode) {
@@ -18,10 +18,10 @@ P_TRADE_CONDITION_NODE createNode(P_TRADE_CONDITION plan) {
 	return newNode;
 }
 
-void setListNodeNextListNode(P_TRADE_CONDITION_NODE sourceNode, P_TRADE_CONDITION_NODE newNextNode) {
+void setTradeConditionNodeNextTradeConditionNode(P_TRADE_CONDITION_NODE sourceNode, P_TRADE_CONDITION_NODE newNextNode) {
 	sourceNode->next = newNextNode;
 }
 
-void setListNodePrevListNode(P_TRADE_CONDITION_NODE newNode, P_TRADE_CONDITION_NODE prevNode) {
+void setTradeConditionNodePrevTradeConditionNode(P_TRADE_CONDITION_NODE newNode, P_TRADE_CONDITION_NODE prevNode) {
 	newNode->prev = prevNode;
 }
