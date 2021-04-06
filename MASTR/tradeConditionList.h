@@ -13,5 +13,8 @@ P_TRADE_CONDITION_LIST initializeTradeConditionList();
 void printTradeConditionListMenu();
 bool executeTradeConditionListUserOption(P_TRADE_CONDITION_LIST);
 P_TRADE_CONDITION_NODE getTradeConditionListHeadNode(P_TRADE_CONDITION_LIST);
+int getLengthOfConditionList(P_TRADE_CONDITION_LIST);
 void addConditionToList(P_TRADE_CONDITION_LIST, P_TRADE_CONDITION);
+void deleteConditionOption(P_TRADE_CONDITION_LIST);
+void removeConditionFromList(P_TRADE_CONDITION_LIST, int);
 void printTradeConditionList(P_TRADE_CONDITION_LIST);

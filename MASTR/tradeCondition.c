@@ -1,6 +1,7 @@
 
 #include <stdbool.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "tradeCondition.h"
 #include "mainMenu.h"
@@ -241,5 +242,10 @@ void printTradeCondition(P_TRADE_CONDITION condition) {
 	printf("Threshold direction: %s\n", thresholdDirectionNames[condition->thresholdDirection]);
 	printf("Threshold value: %.2f\n", condition->thresholdValue);
 
+	return;
+}
+
+void deleteTradeCondition(P_TRADE_CONDITION condition) {
+	free(condition);
 	return;
 }

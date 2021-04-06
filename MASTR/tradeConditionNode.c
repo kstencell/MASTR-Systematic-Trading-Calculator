@@ -30,3 +30,8 @@ void printTradeConditionNode(P_TRADE_CONDITION_NODE node) {
 	printTradeCondition(node->nodeData);
 	return;
 }
+
+void deleteTradeConditionNode(P_TRADE_CONDITION_NODE node) {
+	deleteTradeCondition(node->nodeData);
+	free(node);
+}

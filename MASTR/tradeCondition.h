@@ -38,3 +38,4 @@ void selectThresholdDirection(P_TRADE_CONDITION);
 void selectThresholdValue(P_TRADE_CONDITION);
 double getNumberFromUser();
 void printTradeCondition(P_TRADE_CONDITION);
+void deleteTradeCondition(P_TRADE_CONDITION);
