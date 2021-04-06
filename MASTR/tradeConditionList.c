@@ -48,7 +48,8 @@ bool executeTradeConditionListUserOption(P_TRADE_CONDITION_LIST tradeConditionLi
 			return true;
 		}
 		else if (!strcmp("b", userInput)) {
-
+			printTradeConditionList(tradeConditionList);
+			return true;
 		}
 		else if (!strcmp("c", userInput)) {
 
@@ -75,5 +76,25 @@ void addConditionToList(P_TRADE_CONDITION_LIST tradeConditionList, P_TRADE_CONDI
 		setTradeConditionNodeNextTradeConditionNode(tradeConditionList->listTail, newNode);
 		setTradeConditionNodePrevTradeConditionNode(newNode, tradeConditionList->listTail);
 		tradeConditionList->listTail = newNode;
+	}
+}
+
+void printTradeConditionList(P_TRADE_CONDITION_LIST tradeConditionList) {
+
+	if (getTradeConditionListHeadNode(tradeConditionList) == NULL) {
+		printf("There are no trade conditions.\n");
+	}
+	else {
+
+		P_TRADE_CONDITION_NODE current = tradeConditionList->listHead;
+
+		int conditionNumber = 1;
+		while (current != NULL) {
+			printf("Condition Number: %d\n", conditionNumber);
+			printTradeConditionNode(current);
+			current = current->next;
+			conditionNumber++;
+			printf("\n");
+		}
 	}
 }

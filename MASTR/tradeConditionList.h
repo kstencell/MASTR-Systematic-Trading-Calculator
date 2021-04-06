@@ -14,3 +14,4 @@ void printTradeConditionListMenu();
 bool executeTradeConditionListUserOption(P_TRADE_CONDITION_LIST);
 P_TRADE_CONDITION_NODE getTradeConditionListHeadNode(P_TRADE_CONDITION_LIST);
 void addConditionToList(P_TRADE_CONDITION_LIST, P_TRADE_CONDITION);
+void printTradeConditionList(P_TRADE_CONDITION_LIST);

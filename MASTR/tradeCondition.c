@@ -166,7 +166,7 @@ void selectThresholdDirection(P_TRADE_CONDITION condition) {
 			return;
 		}
 		else if (!strcmp("b", userInput)) {
-			condition->thresholdDirection = GREAT_THAN_OR_EQUAL;
+			condition->thresholdDirection = GREATER_THAN_OR_EQUAL;
 			return;
 		}
 		else if (!strcmp("c", userInput)) {
@@ -227,4 +227,19 @@ double getNumberFromUser() // General purpose function to get input from the use
 	} while (!validInput);
 
 	return (double)atoi(buffer);
+}
+
+void printTradeCondition(P_TRADE_CONDITION condition) {
+	const char* conditionTypeNames[] = { "BUY", "SELL" };
+	const char* indicatorTypeNames[] = { "SMA10", "SMA25", "SMA50" };
+	const char* thresholdTypeNames[] = { "PERCENTAGE", "ABSOLUTE" };
+	const char* thresholdDirectionNames[] = { "GREATER THAN", "GREATER THAN OR EQUAL", "LESS THAN", "LESS THAN OR EQUAL" };
+
+	printf("Condition type: %s\n", conditionTypeNames[condition->conditionType]);
+	printf("Indicator type: %s\n", indicatorTypeNames[condition->indicatorType]);
+	printf("Threshold type: %s\n", thresholdTypeNames[condition->thresholdType]);
+	printf("Threshold direction: %s\n", thresholdDirectionNames[condition->thresholdDirection]);
+	printf("Threshold value: %.2f\n", condition->thresholdValue);
+
+	return;
 }

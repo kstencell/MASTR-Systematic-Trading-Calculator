@@ -25,3 +25,8 @@ void setTradeConditionNodeNextTradeConditionNode(P_TRADE_CONDITION_NODE sourceNo
 void setTradeConditionNodePrevTradeConditionNode(P_TRADE_CONDITION_NODE newNode, P_TRADE_CONDITION_NODE prevNode) {
 	newNode->prev = prevNode;
 }
+
+void printTradeConditionNode(P_TRADE_CONDITION_NODE node) {
+	printTradeCondition(node->nodeData);
+	return;
+}
