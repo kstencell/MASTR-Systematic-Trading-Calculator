@@ -226,5 +226,7 @@ bool loadTradeConditionListFromFile(P_TRADE_CONDITION_LIST tradeConditionList, c
 		streamReadTradeConditionFromFile(fp, condition);
 		addConditionToList(tradeConditionList, condition);
 	}
+
+	return true;
 }
 

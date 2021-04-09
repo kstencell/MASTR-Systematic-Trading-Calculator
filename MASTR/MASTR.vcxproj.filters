@@ -31,6 +31,12 @@
     <Filter Include="Header Files\Systematic Trading Analysis">
       <UniqueIdentifier>{4747a2d3-0d37-472a-8e8c-3d6f558534bf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Systematic Trading Analysis\Simulation">
+      <UniqueIdentifier>{7ea24a08-b651-4252-b3f5-2a46e22ce8ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Systematic Trading Analysis\Simluation">
+      <UniqueIdentifier>{01c1b76d-52f2-4127-b241-929015670f31}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -60,6 +66,15 @@
     <ClCompile Include="tradeCondition.c">
       <Filter>Source Files\Systematic Trading Analysis</Filter>
     </ClCompile>
+    <ClCompile Include="simulationData.c">
+      <Filter>Source Files\Systematic Trading Analysis\Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="simulationDataNode.c">
+      <Filter>Source Files\Systematic Trading Analysis\Simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="simulation.c">
+      <Filter>Source Files\Systematic Trading Analysis\Simulation</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="historicalData.h">
@@ -85,6 +100,15 @@
     </ClInclude>
     <ClInclude Include="tradeConditionList.h">
       <Filter>Header Files\Systematic Trading Analysis</Filter>
+    </ClInclude>
+    <ClInclude Include="simulationData.h">
+      <Filter>Header Files\Systematic Trading Analysis\Simluation</Filter>
+    </ClInclude>
+    <ClInclude Include="simulationDataNode.h">
+      <Filter>Header Files\Systematic Trading Analysis\Simluation</Filter>
+    </ClInclude>
+    <ClInclude Include="simulation.h">
+      <Filter>Header Files\Systematic Trading Analysis\Simluation</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

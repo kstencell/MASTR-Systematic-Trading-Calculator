@@ -145,6 +145,9 @@
     <ClCompile Include="indicators.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="mainMenu.c" />
+    <ClCompile Include="simulation.c" />
+    <ClCompile Include="simulationData.c" />
+    <ClCompile Include="simulationDataNode.c" />
     <ClCompile Include="tradeConditionList.c" />
     <ClCompile Include="tradeConditionNode.c" />
     <ClCompile Include="tradeCondition.c" />
@@ -155,6 +158,9 @@
     <ClInclude Include="historicalData.h" />
     <ClInclude Include="indicators.h" />
     <ClInclude Include="mainMenu.h" />
+    <ClInclude Include="simulation.h" />
+    <ClInclude Include="simulationData.h" />
+    <ClInclude Include="simulationDataNode.h" />
     <ClInclude Include="tradeConditionList.h" />
     <ClInclude Include="tradeConditionNode.h" />
     <ClInclude Include="tradeCondition.h" />
