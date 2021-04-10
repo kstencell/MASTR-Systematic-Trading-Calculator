@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "tradeCondition.h"
+#include "simulation.h"
 #include "mainMenu.h"
 
 
@@ -15,39 +16,6 @@ P_TRADE_CONDITION initializeTradeCondition() {
 
 	return tradeCondition;
 }
-
-//void createTradeCondition(P_TRADE_CONDITION tradeConditionList) {
-//
-//	char userInput[MAX_USER_INPUT_LEN];
-//	bool validOptionChoice = false;
-//
-//	fputs("~~~~~~~~~~~~~~~ CREATE TRADING PLAN ~~~~~~~~~~~~~~~~~\n", stdout);
-//	fputs("What would you like to do?\n", stdout);
-//	fputs("a) Add a trade condition\n", stdout);
-//	fputs("b) View all trade conditions\n", stdout);
-//	fputs("c) Delete a trade condition\n", stdout);
-//	fputs("d) Quit to main menu\n", stdout);
-//
-//	while (true) {
-//
-//		fgets(userInput, MAX_USER_INPUT_LEN, stdin);
-//		userInput[strcspn(userInput, "\n")] = 0;
-//
-//		if (!strcmp("a", userInput)) {
-//			addTradeCondition(tradeConditionList);
-//		}
-//		else if (!strcmp("b", userInput)) {
-//
-//		}
-//		else if (!strcmp("c", userInput)) {
-//
-//		}
-//		else if (!strcmp("d", userInput)) {
-//
-//		}
-//	}
-//
-//}
 
 P_TRADE_CONDITION createTradeCondition() {
 
@@ -271,4 +239,80 @@ void streamReadTradeConditionFromFile(FILE* fp, P_TRADE_CONDITION condition) {
 	fscanf(fp, "%f\n", &(condition->thresholdValue));
 
 	return;
+}
+
+bool isTradeConditionTriggered(P_TRADE_CONDITION_NODE tradeCondition, P_DATA_NODE dataNode) {
+
+	float absoluteDifference;
+	float percentDifference;
+
+	switch (tradeCondition->nodeData->indicatorType)
+	{
+		case SMA10:
+			if (dataNode->prev->nodeData->indicators->SMA10 == 0)
+				return false;
+			else {
+
+				absoluteDifference = dataNode->nodeData->indicators->SMA10 - dataNode->prev->nodeData->indicators->SMA10;
+				percentDifference = (absoluteDifference / dataNode->nodeData->indicators->SMA10) * 100;
+				break;
+			}
+		case SMA25:
+			if (dataNode->prev->nodeData->indicators->SMA25 == 0)
+				return false;
+			else {
+
+				absoluteDifference = dataNode->nodeData->indicators->SMA25 - dataNode->prev->nodeData->indicators->SMA25;
+				percentDifference = (absoluteDifference / dataNode->nodeData->indicators->SMA25) * 100;
+				break;
+			}
+		case SMA50:
+			if (dataNode->prev->nodeData->indicators->SMA50 == 0)
+				return false;
+			else {
+
+				absoluteDifference = dataNode->nodeData->indicators->SMA50 - dataNode->prev->nodeData->indicators->SMA50;
+				percentDifference = (absoluteDifference / dataNode->nodeData->indicators->SMA50) * 100;
+				break;
+			}
+	}
+
+	switch (tradeCondition->nodeData->thresholdDirection) {
+		case GREATER_THAN:
+			if (percentDifference > tradeCondition->nodeData->thresholdValue)
+				return true;
+			break;
+		case GREATER_THAN_OR_EQUAL:
+			if (percentDifference >= tradeCondition->nodeData->thresholdValue)
+				return true;
+			break;
+		case LESS_THAN:
+			if (percentDifference < tradeCondition->nodeData->thresholdValue)
+				return true;
+			break;
+		case LESS_THAN_OR_EQUAL:
+			if (percentDifference < tradeCondition->nodeData->thresholdValue)
+				return true;
+			break;
+	}
+
+	return false;
+}
+
+
+
+
+
+
+	if (tradeCondition->nodeData->conditionType == SMA10) {
+		if ((dataNode->nodeData->indicators->SMA10 - dataNode->prev->nodeData->indicators->SMA10) ) {
+
+		}
+	}
+	else if (tradeCondition->nodeData->conditionType == SMA25) {
+
+	}
+	else {
+
+	}
 }

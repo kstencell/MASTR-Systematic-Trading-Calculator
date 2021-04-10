@@ -22,6 +22,10 @@ void computeIndicators(P_DATA_LIST list) {
 	P_DATA_NODE current = list->listHead;
 
 	for (int i = 0; current != NULL; i++) {
+		current->nodeData->indicators->SMA10 = 0;
+		current->nodeData->indicators->SMA25 = 0;
+		current->nodeData->indicators->SMA50 = 0;
+
 		if (i > 8)
 			current->nodeData->indicators->SMA10 = computeSMA(current, 10);
 		if (i > 23)

@@ -230,3 +230,17 @@ bool loadTradeConditionListFromFile(P_TRADE_CONDITION_LIST tradeConditionList, c
 	return true;
 }
 
+void checkTradeConditionList(P_SIMULATION_DATA newSimulationData, P_TRADE_CONDITION_LIST tradeConditionList, P_DATA_NODE currentDataNode) {
+
+	P_TRADE_CONDITION_NODE currentTradeCondition = tradeConditionList->listHead;
+
+	while (currentTradeCondition != NULL) {
+		if (isTradeConditionTriggered(currentTradeCondition, currentDataNode)) {
+			//execute trade
+		}
+		else {
+			currentTradeCondition = currentTradeCondition->next;
+		}
+	}
+}
+
