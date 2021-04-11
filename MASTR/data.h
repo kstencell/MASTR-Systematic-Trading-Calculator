@@ -1,6 +1,6 @@
 #pragma once
 
-#include "indicators.h"
+//#include "indicators.h"
 
 typedef struct data {
 
@@ -8,7 +8,7 @@ typedef struct data {
 	float open, high, low, close;
 	unsigned long volume;
 
-	P_INDICATORS indicators;
+	//P_INDICATORS indicators;
 
 }DATA, *P_DATA;
 

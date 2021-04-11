@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "data.h"
-#include "indicators.h"
+//#include "indicators.h"
 
 P_DATA createData(char date[], float open, float high, float low, float close, unsigned long volume) {
 
@@ -21,7 +21,7 @@ P_DATA createData(char date[], float open, float high, float low, float close, u
 	newData->close = close;
 	newData->volume = volume;
 
-	newData->indicators = createIndicators();
+	//newData->indicators = createIndicators();
 
 	return newData;
 }
