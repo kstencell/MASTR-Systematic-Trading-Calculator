@@ -1,34 +1,23 @@
-/*#include <stdio.h>
 #include <stdlib.h>
-#include "historicalData.h"
-#include "dataNode.h"
+#include <stdio.h>
+#include <string.h>
 #include "data.h"
-#include "indicators.h"
-#include "tradingPlans.h"
-#include "mainMenu.h"
 
-int main(int argc, char* argv[]) {
+P_DATA createData(char date[], float open, float high, float low, float close, unsigned long volume) {
 
-	P_DATA_LIST historicalData = createList();
-
-	if (!loadDataFromDisk(historicalData, argv[1])) {
-		fprintf(stderr, "No historical data found.");
+	P_DATA newData = (P_DATA)malloc(sizeof(DATA));
+	if (!newData) {
+		fprintf(stderr, "Error allocating memory.\n");
 		exit(EXIT_FAILURE);
 	}
 
-	//printf("%s", historicalData->listTail->nodeData->date);
-	//printf("%s", historicalData->listTail->nodeData->date);
+	newData->date = (char*)malloc(sizeof(char) * 10);
+	strcpy(newData->date, date);
+	newData->open = open;
+	newData->high = high;
+	newData->low = low;
+	newData->close = close;
+	newData->volume = volume;
 
-	computeIndicators(historicalData);
-
-	P_TRADE_CONDITION tradingPlan = initializeTradingPlan();
-
-	printf("%s", historicalData->listTail->nodeData->date);
-
-	while (true) {
-		printMainMenuOptions();
-		executeMainMenuOptionChoice(historicalData, tradingPlan);
-	}
-
-	return 0;
-} */
+	return newData;
+}

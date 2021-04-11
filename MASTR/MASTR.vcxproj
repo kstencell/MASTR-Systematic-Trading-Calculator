@@ -144,16 +144,11 @@
     <ClCompile Include="data.c" />
     <ClCompile Include="dataNode.c" />
     <ClCompile Include="historicalData.c" />
-    <ClCompile Include="indicators.c" />
-    <ClCompile Include="main.c" />
-    <ClCompile Include="mainMenu.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="data.h" />
     <ClInclude Include="dataNode.h" />
     <ClInclude Include="historicalData.h" />
-    <ClInclude Include="indicators.h" />
-    <ClInclude Include="mainMenu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
