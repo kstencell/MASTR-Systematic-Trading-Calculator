@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="data.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="dataNode.c">
       <Filter>Source Files</Filter>
     </ClCompile>
