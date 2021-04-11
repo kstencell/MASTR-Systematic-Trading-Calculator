@@ -1,5 +1,7 @@
 #pragma once
-#include "data.h"
+#include <stdbool.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 #define BUFFER_SIZE		10
 
@@ -42,6 +44,6 @@ void printTradeCondition(P_TRADE_CONDITION);
 void deleteTradeCondition(P_TRADE_CONDITION);
 void streamPrintTradeCondition(FILE*, P_TRADE_CONDITION);
 void streamReadTradeConditionFromFile(FILE*, P_TRADE_CONDITION);
-bool isTradeConditionTriggered(P_TRADE_CONDITION_NODE, P_DATA_NODE);
+//bool isTradeConditionTriggered(P_TRADE_CONDITION_NODE, P_DATA_NODE);
 
 

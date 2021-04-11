@@ -31,7 +31,7 @@ int main(int argc, char* argv[]) {
 		bool continueMainMenu = true;
 		printMainMenuOptions();
 		continueMainMenu = executeMainMenuOptionChoice(historicalData, tradeConditionList);
-	} while (continueMainMenu);
+	} while (!continueMainMenu);
 
 	return 0;
 }

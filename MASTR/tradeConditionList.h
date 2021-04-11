@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include "tradeConditionNode.h"
 #include "tradeCondition.h"
-#include "simulation.h"
 
 typedef struct tradingConditionList {
 	P_TRADE_CONDITION_NODE listHead;
@@ -23,7 +22,7 @@ void printTradeConditionList(P_TRADE_CONDITION_LIST);
 bool saveTradeConditionListToDisk(P_TRADE_CONDITION_LIST, char[]);
 void streamPrintTradeConditionList(FILE*, P_TRADE_CONDITION_LIST);
 bool loadTradeConditionListFromFile(P_TRADE_CONDITION_LIST, char[]);
-void checkTradeConditionList(P_SIMULATION_DATA, P_TRADE_CONDITION_LIST, P_DATA_NODE);
+//void checkTradeConditionList(P_SIMULATION_DATA, P_TRADE_CONDITION_LIST, P_DATA_NODE);
 
 
 

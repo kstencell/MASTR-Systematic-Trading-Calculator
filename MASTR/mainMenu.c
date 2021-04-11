@@ -6,6 +6,7 @@
 #include "mainMenu.h"
 #include "tradeConditionList.h"
 #include "historicalData.h"
+#include "simulation.h"
 
 void printMainMenuOptions() {
 
@@ -53,7 +54,8 @@ bool executeMainMenuOptionChoice(P_DATA_LIST historicalData, P_TRADE_CONDITION_L
 			return true;
 		}
 		else if (!strcmp("d", userInput)) {
-
+			runSimulation(historicalData, tradeConditionList);
+			return true;
 		}
 		else if (!strcmp("e", userInput)) {
 
