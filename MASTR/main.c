@@ -17,14 +17,9 @@ int main(int argc, char* argv[]) {
 		exit(EXIT_FAILURE);
 	}
 
-	/*printf("%s", historicalData->listTail->nodeData->date);
-	printf("%s", historicalData->listTail->nodeData->date);*/
-
 	computeIndicators(historicalData);
 
 	P_TRADE_CONDITION_LIST tradeConditionList = initializeTradeConditionList();
-
-	//printf("%s", historicalData->listTail->nodeData->date);
 
 	bool continueMainMenu = true;
 	do {
