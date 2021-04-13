@@ -18,5 +18,51 @@
     <ClCompile Include="main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+ Systematic-Trading-Analysis
+    <ClCompile Include="mainMenu.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="simulation.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="simulationData.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="simulationDataNode.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tradeCondition.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tradeConditionList.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tradeConditionNode.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="mainMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="simulation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="simulationData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="simulationDataNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tradeCondition.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tradeConditionList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tradeConditionNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+ master
   </ItemGroup>
 </Project>
