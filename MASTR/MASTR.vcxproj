@@ -148,6 +148,7 @@
     <ClCompile Include="tradeConditionList.c" />
     <ClCompile Include="tradeConditionNode.c" />
   </ItemGroup>
+ Systematic-Trading-Analysis
   <ItemGroup>
     <ClInclude Include="mainMenu.h" />
     <ClInclude Include="simulation.h" />
@@ -157,6 +158,8 @@
     <ClInclude Include="tradeConditionList.h" />
     <ClInclude Include="tradeConditionNode.h" />
   </ItemGroup>
+
+ master
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
