@@ -153,6 +153,23 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="main.c" />
+    <ClCompile Include="mainMenu.c" />
+    <ClCompile Include="simulation.c" />
+    <ClCompile Include="simulationData.c" />
+    <ClCompile Include="simulationDataNode.c" />
+    <ClCompile Include="tradeCondition.c" />
+    <ClCompile Include="tradeConditionList.c" />
+    <ClCompile Include="tradeConditionNode.c" />
+    <ClInclude Include="mainMenu.h" />
+    <ClInclude Include="simulation.h" />
+    <ClInclude Include="simulationData.h" />
+    <ClInclude Include="simulationDataNode.h" />
+    <ClInclude Include="tradeCondition.h" />
+    <ClInclude Include="tradeConditionList.h" />
+    <ClInclude Include="tradeConditionNode.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
