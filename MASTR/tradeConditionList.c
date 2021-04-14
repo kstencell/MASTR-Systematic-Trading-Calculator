@@ -134,11 +134,9 @@ void deleteConditionOption(P_TRADE_CONDITION_LIST tradeConditionList) {
 void removeConditionFromList(P_TRADE_CONDITION_LIST tradeConditionList, int conditionNumberToDelete) {
 
 	P_TRADE_CONDITION_NODE current = tradeConditionList->listHead;
-	//P_TRADE_CONDITION_NODE prev = NULL;
 
 	int i = 1;
 	while (i != conditionNumberToDelete) {
-		//prev = current;
 		current = current->next;
 		i++;
 	}
@@ -230,22 +228,4 @@ bool loadTradeConditionListFromFile(P_TRADE_CONDITION_LIST tradeConditionList, c
 	return true;
 }
 
-//void checkTradeConditionList(P_SIMULATION_DATA newSimulationData, P_TRADE_CONDITION_LIST tradeConditionList, P_DATA_NODE currentDataNode) {
-//
-//	P_TRADE_CONDITION_NODE currentTradeCondition = tradeConditionList->listHead;
-//
-//	while (currentTradeCondition != NULL) {
-//		if (isTradeConditionTriggered(currentTradeCondition, currentDataNode)) {
-//			if (executeTrade(newSimulationData, currentTradeCondition, currentDataNode)) {
-//				printf("Trade executed on %s", newSimulationData->date);
-//			}
-//			return;
-//		}
-//		else {
-//			currentTradeCondition = currentTradeCondition->next;
-//		}
-//	}
-//
-//	return;
-//}
 

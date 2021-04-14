@@ -16,8 +16,7 @@ void printMainMenuOptions() {
 	fputs("b) Load an existing trading plan from file\n", stdout);
 	fputs("c) Save your current trading plan\n", stdout);
 	fputs("d) Simulate your trading plan.\n", stdout);
-	fputs("e) More Info\n", stdout);
-	fputs("f) Quit\n", stdout);
+	fputs("e) Quit\n", stdout);
 	fputs("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n", stdout);
 	fputs("Option: ", stdout);
 
@@ -58,9 +57,6 @@ bool executeMainMenuOptionChoice(P_DATA_LIST historicalData, P_TRADE_CONDITION_L
 			return true;
 		}
 		else if (!strcmp("e", userInput)) {
-
-		}
-		else if (!strcmp("f", userInput)) {
 			return false;
 		}
 		else {

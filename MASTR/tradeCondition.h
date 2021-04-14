@@ -5,23 +5,13 @@
 
 #define BUFFER_SIZE		10
 
-//typedef enum conditionStatus { FULL, EMPTY} CONDITION_STATUS;
 typedef enum conditionType { BUY, SELL } CONDITION_TYPE;
-//const char* conditionTypeNames[] = { "BUY", "SELL"};
-
 typedef enum indicatorType { SMA10, SMA25, SMA50 } INDICATOR_TYPE;
-//const char* indicatorTypeNames[] = { "SMA10", "SMA25", "SMA50" };
-
 typedef enum thresholdType { PERCENTAGE, ABSOLUTE } THRESHOLD_TYPE;
-//const char* thresholdTypeNames[] = { "PERCENTAGE", "ABSOLUTE" };
-
 typedef enum thresholdDirection { GREATER_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN, LESS_THAN_OR_EQUAL } THRESHOLD_DIRECTION;
-//const char* thresholdDirectionNames[] = { "GREATER THAN", "GREATER THAN OR EQUAL", "LESS THAN", "LESS THAN OR EQUAL" };
-
 
 typedef struct tradeCondition {
 
-	//CONDITION_STATUS conditionStatus;
 	CONDITION_TYPE conditionType;
 	INDICATOR_TYPE indicatorType;
 	THRESHOLD_TYPE thresholdType;
@@ -44,6 +34,5 @@ void printTradeCondition(P_TRADE_CONDITION);
 void deleteTradeCondition(P_TRADE_CONDITION);
 void streamPrintTradeCondition(FILE*, P_TRADE_CONDITION);
 void streamReadTradeConditionFromFile(FILE*, P_TRADE_CONDITION);
-//bool isTradeConditionTriggered(P_TRADE_CONDITION_NODE, P_DATA_NODE);
 
 

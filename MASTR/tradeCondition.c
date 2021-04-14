@@ -13,8 +13,6 @@ P_TRADE_CONDITION initializeTradeCondition() {
 
 	P_TRADE_CONDITION tradeCondition = (P_TRADE_CONDITION)malloc(sizeof(TRADE_CONDITION));
 
-	//tradeCondition->conditionStatus = EMPTY;
-
 	return tradeCondition;
 }
 
@@ -27,7 +25,9 @@ P_TRADE_CONDITION createTradeCondition() {
 
 	selectConditionType(newCondition);
 	selectIndicatorType(newCondition);
-	selectThresholdType(newCondition);
+	newCondition->thresholdType = PERCENTAGE;
+	// left the line below for when absolute value triggers make a come back.
+	//selectThresholdType(newCondition);
 	selectThresholdDirection(newCondition);
 	selectThresholdValue(newCondition);
 
@@ -91,31 +91,36 @@ void selectIndicatorType(P_TRADE_CONDITION condition) {
 	}
 }
 
-void selectThresholdType(P_TRADE_CONDITION condition) {
+// ************
+// If we want to use absolute trade price to be used as a trade condition.
+// For now it doesn't seem to be a priority.
+// ************
 
-	char userInput[MAX_USER_INPUT_LEN];
-	bool validOptionChoice = false;
-
-	fputs("Select a threshold type\n", stdout);
-	fputs("a) Percentage\n", stdout);
-	fputs("b) Absolute\n", stdout);
-	while (true) {
-		fgets(userInput, MAX_USER_INPUT_LEN, stdin);
-		userInput[strcspn(userInput, "\n")] = 0;
-
-		if (!strcmp("a", userInput)) {
-			condition->thresholdType = PERCENTAGE;
-			return;
-		}
-		else if (!strcmp("b", userInput)) {
-			condition->thresholdType = ABSOLUTE;
-			return;
-		}
-		else {
-			fputs("Not a valid input, please try again.\n\n", stdout);
-		}
-	}
-}
+//void selectThresholdType(P_TRADE_CONDITION condition) {
+//
+//	char userInput[MAX_USER_INPUT_LEN];
+//	bool validOptionChoice = false;
+//
+//	fputs("Select a threshold type\n", stdout);
+//	fputs("a) Percentage\n", stdout);
+//	fputs("b) Absolute\n", stdout);
+//	while (true) {
+//		fgets(userInput, MAX_USER_INPUT_LEN, stdin);
+//		userInput[strcspn(userInput, "\n")] = 0;
+//
+//		if (!strcmp("a", userInput)) {
+//			condition->thresholdType = PERCENTAGE;
+//			return;
+//		}
+//		else if (!strcmp("b", userInput)) {
+//			condition->thresholdType = ABSOLUTE;
+//			return;
+//		}
+//		else {
+//			fputs("Not a valid input, please try again.\n\n", stdout);
+//		}
+//	}
+//}
 
 void selectThresholdDirection(P_TRADE_CONDITION condition) {
 
@@ -209,7 +214,7 @@ void printTradeCondition(P_TRADE_CONDITION condition) {
 	printf("Indicator type: %s\n", indicatorTypeNames[condition->indicatorType]);
 	printf("Threshold type: %s\n", thresholdTypeNames[condition->thresholdType]);
 	printf("Threshold direction: %s\n", thresholdDirectionNames[condition->thresholdDirection]);
-	printf("Threshold value: %.2f\n", condition->thresholdValue);
+	printf("Threshold value: %.2f percent\n", condition->thresholdValue);
 
 	return;
 }
@@ -241,61 +246,3 @@ void streamReadTradeConditionFromFile(FILE* fp, P_TRADE_CONDITION condition) {
 
 	return;
 }
-
-//bool isTradeConditionTriggered(P_TRADE_CONDITION_NODE tradeCondition, P_DATA_NODE dataNode) {
-//
-//	float absoluteDifference;
-//	float percentDifference;
-//
-//	switch (tradeCondition->nodeData->indicatorType)
-//	{
-//		case SMA10:
-//			if (dataNode->prev->nodeData->indicators->SMA10 == 0)
-//				return false;
-//			else {
-//
-//				absoluteDifference = dataNode->nodeData->indicators->SMA10 - dataNode->prev->nodeData->indicators->SMA10;
-//				percentDifference = (absoluteDifference / dataNode->nodeData->indicators->SMA10) * 100;
-//				break;
-//			}
-//		case SMA25:
-//			if (dataNode->prev->nodeData->indicators->SMA25 == 0)
-//				return false;
-//			else {
-//
-//				absoluteDifference = dataNode->nodeData->indicators->SMA25 - dataNode->prev->nodeData->indicators->SMA25;
-//				percentDifference = (absoluteDifference / dataNode->nodeData->indicators->SMA25) * 100;
-//				break;
-//			}
-//		case SMA50:
-//			if (dataNode->prev->nodeData->indicators->SMA50 == 0)
-//				return false;
-//			else {
-//
-//				absoluteDifference = dataNode->nodeData->indicators->SMA50 - dataNode->prev->nodeData->indicators->SMA50;
-//				percentDifference = (absoluteDifference / dataNode->nodeData->indicators->SMA50) * 100;
-//				break;
-//			}
-//	}
-//
-//	switch (tradeCondition->nodeData->thresholdDirection) {
-//		case GREATER_THAN:
-//			if (percentDifference > tradeCondition->nodeData->thresholdValue)
-//				return true;
-//			break;
-//		case GREATER_THAN_OR_EQUAL:
-//			if (percentDifference >= tradeCondition->nodeData->thresholdValue)
-//				return true;
-//			break;
-//		case LESS_THAN:
-//			if (percentDifference < tradeCondition->nodeData->thresholdValue)
-//				return true;
-//			break;
-//		case LESS_THAN_OR_EQUAL:
-//			if (percentDifference < tradeCondition->nodeData->thresholdValue)
-//				return true;
-//			break;
-//	}
-//
-//	return false;
-//}
