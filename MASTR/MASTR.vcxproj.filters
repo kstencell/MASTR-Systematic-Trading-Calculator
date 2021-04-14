@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
@@ -13,10 +13,102 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Indicator Computation Module">
+      <UniqueIdentifier>{689b4c55-e5ad-4020-8211-2014f16948b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Historical Data Retrieval Module">
+      <UniqueIdentifier>{424e4c2b-d153-4229-b508-a5182afeb2cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Menus">
+      <UniqueIdentifier>{b4321d3f-d2a1-4564-96ad-7a788ed62edc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Systematic Trading Analysis Module">
+      <UniqueIdentifier>{d7aa1fe8-5780-4bca-af9b-f676cdbc39e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Menus">
+      <UniqueIdentifier>{e5afdbd2-5c21-4bbe-8d6a-8e2d5bd17412}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Historical Data Retrieval Module">
+      <UniqueIdentifier>{b21be858-d431-4fe9-8a49-4cb6d4b41a2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Indicator Computation Module">
+      <UniqueIdentifier>{777e32d5-8508-4077-859d-c533deb3a5e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Systematic Trading Analysis Module">
+      <UniqueIdentifier>{99d94741-d0c2-46fa-a6df-d199f0dadf5c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Menus</Filter>
     </ClCompile>
+    <ClCompile Include="mainMenu.c">
+      <Filter>Source Files\Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="data.c">
+      <Filter>Source Files\Historical Data Retrieval Module</Filter>
+    </ClCompile>
+    <ClCompile Include="dataNode.c">
+      <Filter>Source Files\Historical Data Retrieval Module</Filter>
+    </ClCompile>
+    <ClCompile Include="historicalData.c">
+      <Filter>Source Files\Historical Data Retrieval Module</Filter>
+    </ClCompile>
+    <ClCompile Include="indicators.c">
+      <Filter>Source Files\Indicator Computation Module</Filter>
+    </ClCompile>
+    <ClCompile Include="simulation.c">
+      <Filter>Source Files\Systematic Trading Analysis Module</Filter>
+    </ClCompile>
+    <ClCompile Include="simulationData.c">
+      <Filter>Source Files\Systematic Trading Analysis Module</Filter>
+    </ClCompile>
+    <ClCompile Include="simulationDataNode.c">
+      <Filter>Source Files\Systematic Trading Analysis Module</Filter>
+    </ClCompile>
+    <ClCompile Include="tradeCondition.c">
+      <Filter>Source Files\Systematic Trading Analysis Module</Filter>
+    </ClCompile>
+    <ClCompile Include="tradeConditionList.c">
+      <Filter>Source Files\Systematic Trading Analysis Module</Filter>
+    </ClCompile>
+    <ClCompile Include="tradeConditionNode.c">
+      <Filter>Source Files\Systematic Trading Analysis Module</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="indicators.h">
+      <Filter>Header Files\Indicator Computation Module</Filter>
+    </ClInclude>
+    <ClInclude Include="data.h">
+      <Filter>Header Files\Historical Data Retrieval Module</Filter>
+    </ClInclude>
+    <ClInclude Include="dataNode.h">
+      <Filter>Header Files\Historical Data Retrieval Module</Filter>
+    </ClInclude>
+    <ClInclude Include="historicalData.h">
+      <Filter>Header Files\Historical Data Retrieval Module</Filter>
+    </ClInclude>
+    <ClInclude Include="mainMenu.h">
+      <Filter>Header Files\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="simulation.h">
+      <Filter>Header Files\Systematic Trading Analysis Module</Filter>
+    </ClInclude>
+    <ClInclude Include="simulationData.h">
+      <Filter>Header Files\Systematic Trading Analysis Module</Filter>
+    </ClInclude>
+    <ClInclude Include="simulationDataNode.h">
+      <Filter>Header Files\Systematic Trading Analysis Module</Filter>
+    </ClInclude>
+    <ClInclude Include="tradeCondition.h">
+      <Filter>Header Files\Systematic Trading Analysis Module</Filter>
+    </ClInclude>
+    <ClInclude Include="tradeConditionList.h">
+      <Filter>Header Files\Systematic Trading Analysis Module</Filter>
+    </ClInclude>
+    <ClInclude Include="tradeConditionNode.h">
+      <Filter>Header Files\Systematic Trading Analysis Module</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
