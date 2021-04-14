@@ -156,6 +156,7 @@
     <ClCompile Include="main.c" />
     <ClCompile Include="mainMenu.c" />
     <ClCompile Include="pbPlots.c" />
+    <ClCompile Include="plot.c" />
     <ClCompile Include="simulation.c" />
     <ClCompile Include="simulationData.c" />
     <ClCompile Include="simulationDataNode.c" />
@@ -165,6 +166,7 @@
     <ClCompile Include="tradeConditionNode.c" />
     <ClInclude Include="mainMenu.h" />
     <ClInclude Include="pbPlots.h" />
+    <ClInclude Include="plot.h" />
     <ClInclude Include="simulation.h" />
     <ClInclude Include="simulationData.h" />
     <ClInclude Include="simulationDataNode.h" />

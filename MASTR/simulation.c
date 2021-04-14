@@ -4,6 +4,7 @@
 #include "simulationData.h"
 #include "tradeConditionList.h"
 #include "historicalData.h"
+#include "plot.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
@@ -62,6 +63,7 @@ void runSimulation(P_DATA_LIST historicalDataList, P_TRADE_CONDITION_LIST tradeC
 	}
 
 	printSimulationResults(simulationList, historicalDataList);
+	plotSimulationData(historicalDataList, simulationList);
 
 	return;
 }

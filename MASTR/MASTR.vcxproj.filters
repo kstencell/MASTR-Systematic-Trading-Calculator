@@ -43,6 +43,12 @@
     <Filter Include="Header Files\pbPlots">
       <UniqueIdentifier>{997de6f7-a516-4ff6-9b2d-a25b3d32b30b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Graphical Representation of Findings Module">
+      <UniqueIdentifier>{6c3227b2-4026-48a5-ac36-775703db1af9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphical Representation of Findings Module">
+      <UniqueIdentifier>{794e4b20-a457-41a8-8db6-1c4d8b376b31}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -87,6 +93,9 @@
     <ClCompile Include="supportLib.c">
       <Filter>Source Files\pbPlots</Filter>
     </ClCompile>
+    <ClCompile Include="plot.c">
+      <Filter>Source Files\Graphical Representation of Findings Module</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="indicators.h">
@@ -127,6 +136,9 @@
     </ClInclude>
     <ClInclude Include="supportLib.h">
       <Filter>Header Files\pbPlots</Filter>
+    </ClInclude>
+    <ClInclude Include="plot.h">
+      <Filter>Header Files\Graphical Representation of Findings Module</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
