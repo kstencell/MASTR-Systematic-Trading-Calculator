@@ -23,7 +23,6 @@
     <ClCompile Include="dataNode.c" />
     <ClCompile Include="historicalData.c" />
     <ClCompile Include="indicators.c" />
-    <ClCompile Include="main.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="data.h" />
