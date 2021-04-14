@@ -37,6 +37,12 @@
     <Filter Include="Source Files\Systematic Trading Analysis Module">
       <UniqueIdentifier>{99d94741-d0c2-46fa-a6df-d199f0dadf5c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\pbPlots">
+      <UniqueIdentifier>{8bc32bb9-291c-4d22-8bf2-a731eb23251b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pbPlots">
+      <UniqueIdentifier>{997de6f7-a516-4ff6-9b2d-a25b3d32b30b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -75,6 +81,12 @@
     <ClCompile Include="tradeConditionNode.c">
       <Filter>Source Files\Systematic Trading Analysis Module</Filter>
     </ClCompile>
+    <ClCompile Include="pbPlots.c">
+      <Filter>Source Files\pbPlots</Filter>
+    </ClCompile>
+    <ClCompile Include="supportLib.c">
+      <Filter>Source Files\pbPlots</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="indicators.h">
@@ -109,6 +121,12 @@
     </ClInclude>
     <ClInclude Include="tradeConditionNode.h">
       <Filter>Header Files\Systematic Trading Analysis Module</Filter>
+    </ClInclude>
+    <ClInclude Include="pbPlots.h">
+      <Filter>Header Files\pbPlots</Filter>
+    </ClInclude>
+    <ClInclude Include="supportLib.h">
+      <Filter>Header Files\pbPlots</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -155,16 +155,20 @@
   <ItemGroup>
     <ClCompile Include="main.c" />
     <ClCompile Include="mainMenu.c" />
+    <ClCompile Include="pbPlots.c" />
     <ClCompile Include="simulation.c" />
     <ClCompile Include="simulationData.c" />
     <ClCompile Include="simulationDataNode.c" />
+    <ClCompile Include="supportLib.c" />
     <ClCompile Include="tradeCondition.c" />
     <ClCompile Include="tradeConditionList.c" />
     <ClCompile Include="tradeConditionNode.c" />
     <ClInclude Include="mainMenu.h" />
+    <ClInclude Include="pbPlots.h" />
     <ClInclude Include="simulation.h" />
     <ClInclude Include="simulationData.h" />
     <ClInclude Include="simulationDataNode.h" />
+    <ClInclude Include="supportLib.h" />
     <ClInclude Include="tradeCondition.h" />
     <ClInclude Include="tradeConditionList.h" />
     <ClInclude Include="tradeConditionNode.h" />
