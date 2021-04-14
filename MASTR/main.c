@@ -23,7 +23,7 @@ int main(int argc, char* argv[]) {
 
 	bool continueMainMenu = true;
 	do {
-		bool continueMainMenu = true;
+		bool continueMainMenu;
 		printMainMenuOptions();
 		continueMainMenu = executeMainMenuOptionChoice(historicalData, tradeConditionList);
 	} while (!continueMainMenu);
