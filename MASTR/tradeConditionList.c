@@ -80,7 +80,7 @@ int getLengthOfConditionList(P_TRADE_CONDITION_LIST tradeConditionList) {
 		}
 	}
 
-	return;
+	return numberOfConditions;
 }
 
 void addConditionToList(P_TRADE_CONDITION_LIST tradeConditionList, P_TRADE_CONDITION newCondition) {
@@ -101,7 +101,7 @@ void addConditionToList(P_TRADE_CONDITION_LIST tradeConditionList, P_TRADE_CONDI
 void deleteConditionOption(P_TRADE_CONDITION_LIST tradeConditionList) {
 
 	if (getTradeConditionListHeadNode(tradeConditionList) == NULL) {
-		printf("There are no conditions to delete.\n");
+		printf("There are no conditions to delete.\n\n");
 		return;
 	}
 
@@ -115,17 +115,17 @@ void deleteConditionOption(P_TRADE_CONDITION_LIST tradeConditionList) {
 	while (!validChoice) {
 		conditionNumberToDelete = getNumberFromUser();
 
-		if (conditionNumberToDelete < 1 || conditionNumberToDelete > conditionNumberMax) {
-			printf("Not a valid option. Try again.\n");
-			validChoice = false;
-		}
-		else if (conditionNumberToDelete == 0) {
+		if (conditionNumberToDelete == 0) {
 			validChoice = true;
 			return;
 		}
+		else if (conditionNumberToDelete < 1 || conditionNumberToDelete > conditionNumberMax) {
+			printf("Not a valid option. Try again.\n\n");
+			validChoice = false;
+		}
 		else {
 			removeConditionFromList(tradeConditionList, conditionNumberToDelete);
-			printf("Condition number %d has been deleted\n", conditionNumberToDelete);
+			printf("Condition number %d has been deleted\n\n", conditionNumberToDelete);
 			validChoice = true;
 		}
 	}
